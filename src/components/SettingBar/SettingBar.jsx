@@ -6,6 +6,8 @@ import canvasState from "../../store/canvasState";
 import Brush from "../../tools/Brush";
 import Rect from "../../tools/Rect";
 import Ellipse from "../../tools/Ellipse";
+import Eraser from "../../tools/Eraser";
+import Line from "../../tools/Line";
 
 import { SettingBarWrapper, StyledButton } from "./SettingBar.styles";
 import { Menu } from "../Menu";
@@ -41,8 +43,18 @@ const SettingBar = () => {
             toolState.setTool(new Ellipse(canvasState.canvas));
           }}
         />
-        <StyledButton imgPath={EraserImg} />
-        <StyledButton imgPath={LineImg} />
+        <StyledButton
+          imgPath={EraserImg}
+          onClick={() => {
+            toolState.setTool(new Eraser(canvasState.canvas));
+          }}
+        />
+        <StyledButton
+          imgPath={LineImg}
+          onClick={() => {
+            toolState.setTool(new Line(canvasState.canvas));
+          }}
+        />
         <input type="color" />
       </Menu>
       <Menu>
