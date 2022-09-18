@@ -4,6 +4,7 @@ import { observer } from "mobx-react-lite";
 import canvasState from "../../store/canvasState";
 
 import Brush from "../../tools/Brush";
+import Ellipse from "../../tools/Ellipse";
 
 import { CanvasWrapper } from "./Canvas.style";
 
@@ -17,7 +18,7 @@ const Canvas = observer(() => {
 
   useEffect(() => {
     canvasState.setCanvas(canvasRef.current);
-    toolState.setTool(new Brush(canvasRef.current));
+    toolState.setTool(new Brush(canvasState.canvas));
   }, []);
 
   return (

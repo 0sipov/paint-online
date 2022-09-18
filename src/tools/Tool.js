@@ -3,4 +3,10 @@ export default class Tool {
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d");
   }
+
+  destroyEvents() {
+    this.canvas.onmouseup = null;
+    this.canvas.onmousedown = null;
+    this.canvas.onmousemove = null;
+  }
 }
