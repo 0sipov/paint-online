@@ -2,6 +2,7 @@ import { makeAutoObservable } from "mobx";
 
 class ToolState {
   tool = null;
+  color = null;
 
   constructor() {
     makeAutoObservable(this);
@@ -9,6 +10,10 @@ class ToolState {
 
   setTool(tool) {
     this.tool = tool;
+  }
+
+  setColor(color) {
+    this.color = color;
   }
 }
 

@@ -1,3 +1,5 @@
+import toolState from "../store/toolState";
+
 export default class Tool {
   constructor(canvas) {
     this.canvas = canvas;

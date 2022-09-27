@@ -10,7 +10,9 @@ import Eraser from "../../tools/Eraser";
 import Line from "../../tools/Line";
 
 import { SettingBarWrapper, StyledButton } from "./SettingBar.styles";
+
 import { Menu } from "../Menu";
+import ColorSetter from "../ColorSetter/ColorSetter";
 
 import BrushImg from "../../img/brush.svg";
 import RectImg from "../../img/rect.svg";
@@ -55,7 +57,7 @@ const SettingBar = () => {
             toolState.setTool(new Line(canvasState.canvas));
           }}
         />
-        <input type="color" />
+        <ColorSetter />
       </Menu>
       <Menu>
         <StyledButton imgPath={UndoImg} />

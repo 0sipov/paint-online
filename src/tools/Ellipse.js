@@ -1,5 +1,7 @@
 import Tool from "./Tool";
 
+import toolState from "../store/toolState";
+
 export default class Ellipse extends Tool {
   isMousDown = false;
   center = null;
@@ -40,6 +42,8 @@ export default class Ellipse extends Tool {
     img.onload = () => {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.ctx.drawImage(img, 0, 0, this.canvas.width, this.canvas.height);
+      this.ctx.strokeStyle = toolState.color;
+
       this.ctx.beginPath();
       this.ctx.ellipse(
         this.center.x,

@@ -1,5 +1,7 @@
 import Tool from "./Tool";
 
+import toolState from "../store/toolState";
+
 export default class Brush extends Tool {
   isMousDown = false;
 
@@ -19,6 +21,7 @@ export default class Brush extends Tool {
   }
   mouseDownHandler(e) {
     this.isMousDown = true;
+    this.ctx.strokeStyle = toolState.color;
     this.ctx.beginPath();
     this.ctx.moveTo(
       e.pageX - e.target.offsetLeft,

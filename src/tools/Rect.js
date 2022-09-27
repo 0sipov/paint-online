@@ -1,5 +1,7 @@
 import Tool from "./Tool";
 
+import toolState from "../store/toolState";
+
 export default class Rect extends Tool {
   isMousDown = false;
   startRect = null;
@@ -39,6 +41,7 @@ export default class Rect extends Tool {
     img.onload = () => {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.ctx.drawImage(img, 0, 0, this.canvas.width, this.canvas.height);
+      this.ctx.strokeStyle = toolState.color;
       this.ctx.beginPath();
       this.ctx.strokeRect(
         this.startRect.x,
